@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "config": "^4.0.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.15.0",
+    "nanoid": "^5.1.5"
+  }
+}
