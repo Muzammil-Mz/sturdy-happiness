@@ -7,18 +7,19 @@ const router = express.Router()
 
 router.post("/create", async (req, res) => {
     try {
-        let { url } = req.body
-        if (!/^https?:\/\//i.test(url)) {
-            url = "https://" + url;
+        let { longURL } = req.body
+        if (!/^https?:\/\//i.test(longURL)) {
+            longURL = "https://" + longURL;
         }
         const shortlink = nanoid(7)
         const newURL = new shortnerModel({
             shortURL: shortlink,
-            longURL: url,
+            longURL: longURL,
         })
         await newURL.save()
         console.log("saved ");
-        res.status(201).json({ msg: "short link created", shortlink })
+        res.status(201).json({ msg: "short link created", shortURL: shortlink })
+
 
     } catch (error) {
         console.log(error);
